@@ -6,7 +6,6 @@ body, html {
 .header-container {
   overflow: hidden;
   background-color: #F1FAEE;
-  /* position: fixed; */
   top: 0; 
   width: 100%;
   height: 120px;
@@ -38,7 +37,6 @@ li {
 .dashboard-container {
   height: 100%;
   width: 850px;
-  border: 2px solid blue;
   /* background-color: #1D3557; */
 }
 
@@ -47,9 +45,27 @@ li {
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 10px;
+  /* border-style: none; */
   /* background-color: #457B9D; */
+}
+
+.panel {
+  border-style: none;
 }
 
 .test-case {
   padding: 30px;
+  border: 1px solid black;
+}
+
+.jumbo {
+  display: flex;
+}
+
+.aside-container {
+  width: 420px;
+}
+
+.test-case-name {
+  /* padding-left: 15px; */
 }

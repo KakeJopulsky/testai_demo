@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
+import Aside from './components/Aside';
 import testData from '../test_ai_webpage/data.json';
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
       test_date: '',
       total_tests: '',
       current_test: '',
+      current_step: '',
       test_names: '',
       total_pass: '',
     }
@@ -31,21 +33,25 @@ class App extends React.Component {
       test_date: testData.time_stamp,
       total_tests: testData.test_cases.length,
       current_test: testData.test_cases[0],
+      // current_step: testData.test_cases[0].test_steps,
       test_names: testNames,
       total_pass: testData.test_cases.filter(test => test.status === true).length,
     })
   }
 
   handleCurrentTest(e) {
-    let newCurrTest = testData.test_cases[e.target.value];
+    let newCurrentTest = testData.test_cases[e.target.value];
     this.setState({
-      current_test: newCurrTest
+      current_test: newCurrentTest
     });
   }
 
   handleCurrentStep(e) {
-    console.log('handleCurrentStep!');
+    // let nextStep = testData.test_cases[e].test_steps;
     console.log(e);
+    // this.setState = ({
+    //   current_step: nextStep
+    // });
   }
 
   render() {
@@ -60,7 +66,10 @@ class App extends React.Component {
             )
           : (<div>No data</div>)
         }
-        {isReady ? (<Dashboard data={this.state.current_test}/>) : <div>No data</div>}
+        <div className="jumbo">
+        {isReady ? (<Dashboard data={this.state.current_test} displayStep={this.handleCurrentStep}/>) : <div>No data</div>}
+        {isReady ? (<Aside data={this.state.current_step}/>) : <div>No data</div>}
+        </div>
       </div>
     )
   }

@@ -19,7 +19,7 @@ const Header = ({ id, appName, date, testNames, totalTests, totalPass, changeCur
             Select test: 
             <select onChange={changeCurr}>
               {testNames.map((test, i) => (
-                <option value={i}>{test}</option>
+                <option value={i} key={i}>{test}</option>
               ))}
             </select>
           </li>
