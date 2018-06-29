@@ -1,21 +1,12 @@
-# react-boilerplate
-Minimal React Boilerplate with Webpack
+> Created for the folks @ test.ai.
 
-### Installing Dependencies
 
-Create a .babelrc file within the root directory containing:
-```sh
-{
-  "presets": [
-    "env",
-    "react",
-    "stage-2"
-  ]
-}
-```  
+> Made with React.
+> Express server made for deployment to Heroku.
+> https://testai-demo.herokuapp.com/
 
-From within the root directory:
-
-```sh
+```
 npm install
+npm run build
+npm run server
 ```

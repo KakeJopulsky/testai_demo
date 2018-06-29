@@ -8,7 +8,6 @@ import testData from '../dist/data.json';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    // Idea, on click add shadow or highlight to screencap to identify which is selected
 
     this.state = {
       id: '',
