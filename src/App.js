@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Dashboard from './components/Dashboard';
 import Aside from './components/Aside';
 import Chart from './components/Chart';
-import testData from '../test_ai_webpage/data.json';
+import testData from '../dist/data.json';
 
 class App extends React.Component {
   constructor(props) {
