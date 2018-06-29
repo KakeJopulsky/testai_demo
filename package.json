@@ -1,10 +1,13 @@
 {
   "name": "plato-de-react",
   "version": "1.0.0",
-  "description": "Jack's React Boilerplate",
+  "description": "Demo",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
+    "build": "webpack --config ./webpack.config.js --mode development",
+    "server": "node server.js"
+
   },
   "author": "jake kopulsky",
   "license": "ISC",
@@ -23,6 +26,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "0.1.0-11",
     "chart.js": "^2.7.2",
+    "express": "^4.16.3",
     "react": "^16.3.2",
     "react-bootstrap": "^0.32.1",
     "react-chartjs-2": "^2.7.2",

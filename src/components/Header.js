@@ -34,6 +34,9 @@ const Header = ({ id, appName, date, testNames, totalTests, totalPass, changeCur
               <MenuItem eventKey={i} key={i}>{title}</MenuItem>
             ))}
           </NavDropdown>
+          <NavItem>
+            <small>created by Jake Kopulsky for test.ai</small>
+          </NavItem>
         </Nav>
       </Navbar>
     </div>
