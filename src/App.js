@@ -49,6 +49,7 @@ class App extends React.Component {
   }
 
   handleCurrentStep(step) {
+    console.log(step.target.id);
     let num = step.target.id;
     this.setState({
       current_step: this.state.current_test.test_steps[num]
@@ -72,9 +73,9 @@ class App extends React.Component {
         {isReady ? (<Aside data={this.state.current_step} testPass={this.state.current_test.status} />) : <div>No data</div>}
         </div>
         <div className="charts">
-          {isReady ? (<Chart metrics={this.state.current_step.launch_times} title="Launch Times" color={'#00A896'}/>) : <div>No data</div>}
-          {isReady ? (<Chart metrics={this.state.current_step.memory} title="Memory" color={'#00A896'} />) : <div>No data</div>}
-          {isReady ? (<Chart metrics={this.state.current_step.cpu} title="CPU" color={'#00A896'} />) : <div>No data</div>}
+          {isReady ? (<Chart metrics={this.state.current_step.launch_times} title="Launch Times" color={'#27A3DD'}/>) : <div>No data</div>}
+          {isReady ? (<Chart metrics={this.state.current_step.memory} title="Memory" color={'#9DC62D'} />) : <div>No data</div>}
+          {isReady ? (<Chart metrics={this.state.current_step.cpu} title="CPU" color={'#F8AC29'} />) : <div>No data</div>}
         </div>
       </div>
     )

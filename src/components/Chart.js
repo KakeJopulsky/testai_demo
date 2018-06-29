@@ -13,7 +13,7 @@ const Chart = ({ metrics, title, color }) => {
         borderWidth: 1,
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
         hoverBorderColor: 'rgba(255,99,132,1)',
-        interval: 40,
+        interval: 50,
         data: metrics
       }
     ]
