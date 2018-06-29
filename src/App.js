@@ -38,7 +38,7 @@ class App extends React.Component {
   }
 
   handleCurrentTest(e) {
-    let newCurrentTest = testData.test_cases[e.target.value];
+    let newCurrentTest = testData.test_cases[e];
     this.setState({
       current_test: newCurrentTest
     });

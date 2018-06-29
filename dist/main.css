@@ -13,6 +13,20 @@ body, html {
   justify-content: space-between;
 }
 
+.pass { 
+  color: green;
+  padding-left: 5px; 
+}
+.fail { 
+  color: orange;
+  padding-left: 5px; 
+}
+
+.boss {
+  display: flex;
+  justify-content: space-between;
+}
+
 .left-header {
   padding-left: 80px;
 }
