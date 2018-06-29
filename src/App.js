@@ -2,11 +2,13 @@ import React from 'react';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
 import Aside from './components/Aside';
+import Chart from './components/Chart';
 import testData from '../test_ai_webpage/data.json';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    // Idea, on click add shadow or highlight to screencap to identify which is selected
 
     this.state = {
       id: '',
@@ -68,6 +70,11 @@ class App extends React.Component {
         <div className="jumbo">
         {isReady ? (<Dashboard data={this.state.current_test} currentStep={this.handleCurrentStep}/>) : <div>No data</div>}
         {isReady ? (<Aside data={this.state.current_step} testPass={this.state.current_test.status} />) : <div>No data</div>}
+        </div>
+        <div className="charts">
+          {isReady ? (<Chart metrics={this.state.current_step.launch_times} title="Launch Times" color={'#00A896'}/>) : <div>No data</div>}
+          {isReady ? (<Chart metrics={this.state.current_step.memory} title="Memory" color={'#00A896'} />) : <div>No data</div>}
+          {isReady ? (<Chart metrics={this.state.current_step.cpu} title="CPU" color={'#00A896'} />) : <div>No data</div>}
         </div>
       </div>
     )

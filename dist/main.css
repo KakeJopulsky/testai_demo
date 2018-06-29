@@ -52,7 +52,6 @@ body, html {
 .aside-container {
   width: 480px;
   padding-right: 50px;
-  padding-top: 10px;
 }
 
 .test-name {
@@ -61,4 +60,13 @@ body, html {
 
 .status {
   padding-bottom: 15px;
+}
+
+.charts {
+  display: flex;
+}
+
+.chart-container {
+  height: 300px;
+  width: 100%;
 }

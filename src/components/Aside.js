@@ -10,8 +10,8 @@ const Aside = ({ data, testPass }) => {
     <div className="aside-container">
       <h3 className="test-name">{data.step_name}</h3>
       {testPass 
-          ?  (<h4 class="status">Pass <Glyphicon glyph="ok" className="pass"/></h4>)
-          :  (<h4 class="status">Fail <Glyphicon glyph="remove" className="fail"/></h4>)
+          ?  (<h4 className="status">Pass <Glyphicon glyph="ok" className="pass"/></h4>)
+          :  (<h4 className="status">Fail <Glyphicon glyph="remove" className="fail"/></h4>)
       }
       <Table striped bordered condensed hover>
         <thead>
