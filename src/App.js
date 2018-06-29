@@ -8,14 +8,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(testData);
     this.state = {
       id: '',
       appName: '',
       test_date: '',
       total_tests: '',
       current_test: '',
-      current_step: '',
+      current_step: 0,
       test_names: '',
       total_pass: '',
     }
@@ -33,7 +32,6 @@ class App extends React.Component {
       test_date: testData.time_stamp,
       total_tests: testData.test_cases.length,
       current_test: testData.test_cases[0],
-      // current_step: testData.test_cases[0].test_steps,
       test_names: testNames,
       total_pass: testData.test_cases.filter(test => test.status === true).length,
     })
@@ -46,12 +44,10 @@ class App extends React.Component {
     });
   }
 
-  handleCurrentStep(e) {
-    // let nextStep = testData.test_cases[e].test_steps;
-    console.log(e);
-    // this.setState = ({
-    //   current_step: nextStep
-    // });
+  handleCurrentStep(step) {
+    this.setState({
+      current_step: this.state.current_test.test_steps[step]
+    })
   }
 
   render() {
@@ -68,7 +64,7 @@ class App extends React.Component {
         }
         <div className="jumbo">
         {isReady ? (<Dashboard data={this.state.current_test} displayStep={this.handleCurrentStep}/>) : <div>No data</div>}
-        {isReady ? (<Aside data={this.state.current_step}/>) : <div>No data</div>}
+        {isReady ? (<Aside data={this.state.current_step} />) : <div>No data</div>}
         </div>
       </div>
     )

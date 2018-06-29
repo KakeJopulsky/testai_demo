@@ -14,7 +14,7 @@ const Aside = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {/* {data.map((test, i) => (
+          {/* {data.cpu.map((test, i) => (
             <tr key={i}>
               <td>{i+1}</td>
               <td>{test.launch_times[i]}</td>
