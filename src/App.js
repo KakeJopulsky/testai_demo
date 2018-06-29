@@ -32,6 +32,7 @@ class App extends React.Component {
       test_date: testData.time_stamp,
       total_tests: testData.test_cases.length,
       current_test: testData.test_cases[0],
+      current_step: testData.test_cases[0].test_steps[0],
       test_names: testNames,
       total_pass: testData.test_cases.filter(test => test.status === true).length,
     })
@@ -40,13 +41,15 @@ class App extends React.Component {
   handleCurrentTest(e) {
     let newCurrentTest = testData.test_cases[e];
     this.setState({
-      current_test: newCurrentTest
+      current_test: newCurrentTest,
+      current_step: newCurrentTest.test_steps[0]
     });
   }
 
   handleCurrentStep(step) {
+    let num = step.target.id;
     this.setState({
-      current_step: this.state.current_test.test_steps[step]
+      current_step: this.state.current_test.test_steps[num]
     })
   }
 
@@ -63,7 +66,7 @@ class App extends React.Component {
           : (<div>No data</div>)
         }
         <div className="jumbo">
-        {isReady ? (<Dashboard data={this.state.current_test} displayStep={this.handleCurrentStep}/>) : <div>No data</div>}
+        {isReady ? (<Dashboard data={this.state.current_test} currentStep={this.handleCurrentStep}/>) : <div>No data</div>}
         {isReady ? (<Aside data={this.state.current_step} />) : <div>No data</div>}
         </div>
       </div>

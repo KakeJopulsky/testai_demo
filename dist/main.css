@@ -4,13 +4,7 @@ body, html {
 }
 
 .header-container {
-  overflow: hidden;
-  background-color: #F1FAEE;
-  top: 0; 
-  width: 100%;
-  height: 120px;
-  display: flex;
-  justify-content: space-between;
+  color: #222222
 }
 
 .pass { 
@@ -27,49 +21,30 @@ body, html {
   justify-content: space-between;
 }
 
-.left-header {
-  padding-left: 80px;
-}
-
-.right-header {
-  padding-right: 80px;
-  padding-top: 10px;
-}
-
-ul {
-  list-style-type: none;
-}
-
-li {
-  padding-bottom: 15px;
-}
-
-.app-name {
-  font-size: 24px;
-}
-
 .dashboard-container {
   height: 100%;
   width: 850px;
-  /* background-color: #1D3557; */
+  padding-left: 50px;
+  display: flex;
+}
+
+.step-name {
+  text-align: center;
 }
 
 .test-steps {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 10px;
-  /* border-style: none; */
-  /* background-color: #457B9D; */
 }
 
-.panel {
-  border-style: none;
+.screenshot {
+  margin: 15px;
+  border-radius: 5px;
 }
 
 .test-case {
   padding: 30px;
-  border: 1px solid black;
 }
 
 .jumbo {
@@ -77,9 +52,6 @@ li {
 }
 
 .aside-container {
-  width: 420px;
-}
-
-.test-case-name {
-  /* padding-left: 15px; */
+  width: 480px;
+  padding-right: 50px;
 }

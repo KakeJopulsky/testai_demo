@@ -1,49 +1,21 @@
 import React from 'react';
-import { Panel, PanelGroup } from 'react-bootstrap';
+import {  } from 'react-bootstrap';
 
-class Dashboard extends React.Component {
-  constructor(props, context) {
-    super(props, context);
 
-    this.handleSelect = this.handleSelect.bind(this);
-
-    this.state = {
-      activeKey: "1"
-    }
-  }
-
-  handleSelect(activeKey) {
-    if (activeKey !== null) {
-      this.setState({ activeKey });
-      this.props.displayStep(activeKey); 
-    }
-  }
   
-  render() {
-    const { data } = this.props;
+const Dashboard = (props) => {
+  const { data } = props;
 
-    return (
-      <div className="dashboard-container">
-          <PanelGroup
-            accordion
-            id="accordion-controlled-example"
-            activeKey={this.state.activeKey}
-            onSelect={this.handleSelect}
-          >
-          <div className="test-steps">
-            {data.test_steps.map((testCase, i) => (
-              <Panel eventKey={i} key={i}>
-              <span className="test-case-name">{testCase.step_name}</span>
-                <div className="test-case">
-                  <Panel.Title toggle><img src={testCase.screenshot} height="247" width="139"></img></Panel.Title>
-                </div>
-              </Panel>
-            ))}
-          </div>
-          </PanelGroup>
-      </div>
-    )
-  }
+  return (
+    <div className="dashboard-container">
+      {data.test_steps.map((image, i) => (
+        <div key={i}>
+          <img src={image.screenshot} id={i} onClick={props.currentStep}className="screenshot" height="247" width="139" key={i}></img>
+          <p className="step-name">{image.step_name}</p>
+        </div>
+      ))}
+    </div>
+  )
 }
 
 export default Dashboard;
