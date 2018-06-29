@@ -3,7 +3,7 @@
 
 > Made with React.\
 > Express server made for deployment to Heroku.\
-> https://testai-demo.herokuapp.com/\
+> https://testai-demo.herokuapp.com/
 
 ```
 npm install
