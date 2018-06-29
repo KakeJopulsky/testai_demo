@@ -1,14 +1,18 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Glyphicon } from 'react-bootstrap';
 
-const Aside = ({ data }) => {
+const Aside = ({ data, testPass }) => {
   let avgCPU = data.cpu.reduce((acc, cur) => acc + cur) / data.cpu.length;
   let avgMEM = data.memory.reduce((acc, cur) => acc + cur) / data.memory.length;
   let avgLAUNCH = data.launch_times.reduce((acc, cur) => acc + cur) / data.launch_times.length;
 
   return (
     <div className="aside-container">
-      <p>{data.step_name}</p>
+      <h3 className="test-name">{data.step_name}</h3>
+      {testPass 
+          ?  (<h4 class="status">Pass <Glyphicon glyph="ok" className="pass"/></h4>)
+          :  (<h4 class="status">Fail <Glyphicon glyph="remove" className="fail"/></h4>)
+      }
       <Table striped bordered condensed hover>
         <thead>
           <tr>

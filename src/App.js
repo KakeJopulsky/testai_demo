@@ -67,7 +67,7 @@ class App extends React.Component {
         }
         <div className="jumbo">
         {isReady ? (<Dashboard data={this.state.current_test} currentStep={this.handleCurrentStep}/>) : <div>No data</div>}
-        {isReady ? (<Aside data={this.state.current_step} />) : <div>No data</div>}
+        {isReady ? (<Aside data={this.state.current_step} testPass={this.state.current_test.status} />) : <div>No data</div>}
         </div>
       </div>
     )

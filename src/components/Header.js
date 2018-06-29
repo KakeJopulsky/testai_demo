@@ -2,13 +2,15 @@ import React from 'react';
 import { Nav, Navbar, NavItem, NavDropdown, MenuItem, Glyphicon } from 'react-bootstrap';
 
 const Header = ({ id, appName, date, testNames, totalTests, totalPass, changeCurr }) => {
+  let newDate = new Date(date).toUTCString();
+
 
   return (
     <div className="header-container">
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#home">Dashboard</a>
+            <a href="#home"><strong>Dashboard</strong></a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
@@ -19,7 +21,7 @@ const Header = ({ id, appName, date, testNames, totalTests, totalPass, changeCur
             <small>ID: {id}</small>
           </NavItem>
           <NavItem>
-            <small>Date: {date}</small>
+            <small>Date: {newDate}</small>
           </NavItem>
           <NavItem>
             <small>Pass: {totalPass}<Glyphicon glyph="ok" className="pass"/></small>

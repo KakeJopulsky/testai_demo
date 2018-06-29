@@ -1,7 +1,4 @@
 import React from 'react';
-import {  } from 'react-bootstrap';
-
-
   
 const Dashboard = (props) => {
   const { data } = props;
@@ -11,7 +8,7 @@ const Dashboard = (props) => {
       {data.test_steps.map((image, i) => (
         <div key={i}>
           <img src={image.screenshot} id={i} onClick={props.currentStep}className="screenshot" height="247" width="139" key={i}></img>
-          <p className="step-name">{image.step_name}</p>
+          <p className="step-name"><strong>{image.step_name}</strong></p>
         </div>
       ))}
     </div>
